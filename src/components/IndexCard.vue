@@ -1,13 +1,13 @@
 <template>
-  <div class="card">
-    <img src="pic"
+  <div class="card hvr-float-shadow">
+    <img :src="pic"
          alt="">
     <p>{{ name }}</p>
     <div class="intro">
       <strong>功能介绍：</strong>
       {{ intro }}
     </div>
-    <button @click="jumpLink(url)">进入</button>
+    <button class="hvr-rectangle-out" @click="jumpLink(url)">进入</button>
   </div>
 </template>
 
@@ -47,6 +47,8 @@ export default {
     width: 100px;
   }
   p {
+    display: inline;
+    vertical-align: bottom;
     font-size: 35px;
     font-family: PingFang SC, sans-serif;
     font-weight: 500;
@@ -79,7 +81,7 @@ export default {
     margin: 50px 50%;
     transform: translateX(-50%);
     font-size: 35px;
-    font-family: PingFang SC;
+    font-family: PingFang SC, sans-serif;
     font-weight: 500;
     line-height: 49px;
     color: #4E94DD;
@@ -88,6 +90,15 @@ export default {
     background: #C1EAFF;
     box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.16);
     border-radius: 20px;
+    &:hover {
+      transition-delay: 0.1s;
+      color: #C1EAFF;
+    }
+    &:before {
+      box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.16);
+      border-radius: 20px;
+      background-color: #4e94dd;
+    }
   }
 }
 </style>

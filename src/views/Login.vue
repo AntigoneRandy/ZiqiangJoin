@@ -7,19 +7,22 @@
             <img src="../assets/login/zhanghao.png" />
             <input type="text"
                    name="username"
+                   v-model="username"
                    placeholder="手机号/邮箱"
-                   autocomplete="false" />
+                   autocomplete="off" />
           </div>
           <div class="input-container">
             <img src="../assets/login/icon_list_mima.png" />
             <input type="password"
                    name="password"
+                   v-model="password"
                    placeholder="请输入密码" />
           </div>
         </div>
         <a>找回密码</a>
         <div class="captcha">
           <input type="text"
+                 v-model="captcha"
                  name="captcha" />
           <button>获取验证码</button>
         </div>
@@ -33,7 +36,19 @@
 
 <script>
 export default {
-  name: 'Login'
+  name: 'Login',
+  data () {
+    return {
+      username: '',
+      password: '',
+      captcha: ''
+    }
+  },
+  methods: {
+    submitForm () {
+      this.$router.push('index')
+    }
+  }
 }
 </script>
 
@@ -109,6 +124,9 @@ button {
       text-decoration: underline;
       cursor: pointer;
       margin-bottom: 30px;
+      &:hover {
+        color: #315efb;
+      }
     }
   }
 }
@@ -128,6 +146,9 @@ button {
     font-weight: 400;
     line-height: 36px;
     color: #000000;
+    &:hover {
+      background-color: #f7f8f8;
+    }
   }
   input {
     border: none;
@@ -158,5 +179,8 @@ button {
   font-weight: 500;
   line-height: 42px;
   color: #4e94dd;
+  &:hover {
+    background-color: #f7f8f8;
+  }
 }
 </style>

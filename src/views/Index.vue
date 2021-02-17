@@ -3,19 +3,23 @@
     <div class="card-container">
       <IndexCard v-for="msg in msgs"
                  :key="msg.name"
+                 :pic="msg.pic"
                  :name="msg.name"
                  :url="msg.url"
                  :intro="msg.intro"></IndexCard>
     </div>
+    <LogoutButton />
   </div>
 </template>
 
 <script>
 import IndexCard from '../components/IndexCard'
+import LogoutButton from '../components/LogoutButton'
 export default {
   name: 'Index',
   components: {
-    IndexCard
+    IndexCard,
+    LogoutButton
   },
   data () {
     return {
@@ -23,17 +27,20 @@ export default {
         {
           name: '招新岗位发布',
           intro: '1、招新岗位发布招新岗位发布招新岗位发布招新岗位发布招新岗位发布2、招新岗位发布招新岗位发布招新岗位发布招新岗位发布招新岗位发布招新岗位发布',
+          pic: require('../assets/index/post.png'),
           url: '/post'
         },
         {
           name: '面试流程管理',
           intro: '1、招新岗位发布招新岗位发布招新岗位发布招新岗位发布招新岗位发2、招新岗位发布招新岗位发布招新岗位发布招新岗位发布招新岗位发布招新岗位发布',
+          pic: require('../assets/index/interview.png'),
           url: '/interview'
         },
         {
           name: '组织架构管理',
           intro: '1、招新岗位发布招新岗位发布招新岗位发布招新岗位发布招新岗位发布2、招新岗位发布招新岗位发布招新岗位发布招新岗位发布招新岗位发布招新岗位发布',
-          url: 'organization'
+          pic: require('../assets/index/organization.png'),
+          url: '/organization'
         }
       ]
     }

@@ -9,6 +9,7 @@
   padding: 0;
   margin: 0;
   border: none;
+  outline: none;
   box-sizing: border-box;
 }
 a {
