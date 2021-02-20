@@ -20,6 +20,43 @@ const routes = [
     path: '/index',
     name: 'Index',
     component: () => import(/* webpackChunkName: "about" */ '../views/Index.vue')
+  },
+  {
+    path: '/home',
+    name: 'Home',
+    component: () => import('../views/Home.vue'),
+    children: [
+      {
+        path: 'post',
+        component: () => import('../views/PostMain.vue'),
+        children: [
+          {
+            path: '',
+            component: () => import('../views/PostView.vue')
+          },
+          {
+            path: 'create',
+            component: () => import('../views/PostCreate.vue')
+          }
+        ]
+      },
+      {
+        path: 'interview',
+        component: () => import('../views/InterviewMain.vue'),
+        children: [
+          {
+            path: '',
+            component: () => import('../views/InterviewView.vue')
+          },
+          {
+            name: 'interviewDetail',
+            path: 'detail/:id',
+            component: () => import('../views/InterviewDetail.vue')
+          }
+        ]
+      },
+      { path: 'organization', component: () => import('../views/Organization.vue') }
+    ]
   }
 ]
 

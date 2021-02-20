@@ -1,6 +1,8 @@
 <template>
   <div id="app">
+    <vue-page-transition name="fade">
     <router-view></router-view>
+    </vue-page-transition>
   </div>
 </template>
 
@@ -12,6 +14,11 @@
   outline: none;
   box-sizing: border-box;
 }
+
+::-webkit-scrollbar {
+    display: none;
+}
+
 a {
   text-decoration: none;
 }
