@@ -28,7 +28,7 @@ export default {
           name: '招新岗位发布',
           intro: '1、招新岗位发布招新岗位发布招新岗位发布招新岗位发布招新岗位发布2、招新岗位发布招新岗位发布招新岗位发布招新岗位发布招新岗位发布招新岗位发布',
           pic: require('../assets/index/post.png'),
-          url: '/home'
+          url: '/home/post'
         },
         {
           name: '面试流程管理',

@@ -37,6 +37,8 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 .job-card {
+  cursor: pointer;
+  pointer-events: auto;
   min-width: 500px;
   width: 500px;
   height: 325px;

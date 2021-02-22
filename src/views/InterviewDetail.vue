@@ -1,5 +1,5 @@
 <template>
-  <div  :class="{'interview-detail-app': true, 'padder' : IntervieweePosts.length!=4}">
+  <div :class="{'interview-detail-app': true, 'padder' : IntervieweePosts.length!=4}">
     <div :class="{'interview-detail-container': true, 'padder-2': index===IntervieweePosts.length-1}" v-for="(IntervieweePost, index) in IntervieweePosts" :key="IntervieweePost.title">
       <p class="title">{{IntervieweePost.title}}（{{IntervieweePost.content.length}}人）</p>
       <div class="signed-area">
@@ -7,7 +7,7 @@
                :key="IntervieweeInfo.id"
                :index="index"
                :info="IntervieweeInfo"/>
-        <IntervieweeCard v-for="i in holders" :key="i"  style="visibility:hidden" />
+        <IntervieweeCard v-for="i in holders(IntervieweePost.content.length)" :key="i"  style="visibility:hidden" />
       </div>
       <div class="footer">
           <img src="../assets/interview/xinxi.png" alt="">
@@ -35,14 +35,18 @@ export default {
     }
   },
   computed: {
-    holders () {
-      return 4 - (this.IntervieweePosts.length % 4)
-    }
   },
   methods: {
     async getIntervieweeData () {
       const res = await require('../../static/tests/msg.json')
       this.IntervieweePosts = res
+    },
+    holders (length) {
+      const total = Math.floor(4 / this.IntervieweePosts.length)
+      if (length % total) {
+        return total - (length % total)
+      }
+      return 0
     }
   },
   mounted: function () {
