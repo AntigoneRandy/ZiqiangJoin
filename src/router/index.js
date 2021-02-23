@@ -36,6 +36,7 @@ const routes = [
           },
           {
             path: 'create',
+            name: 'postCreate',
             component: () => import('../views/PostCreate.vue')
           }
         ]

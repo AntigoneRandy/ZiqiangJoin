@@ -1,7 +1,16 @@
 <template>
   <div :class="{'interview-detail-app': true, 'padder' : IntervieweePosts.length!=4}">
-    <div :class="{'interview-detail-container': true, 'padder-2': index===IntervieweePosts.length-1}" v-for="(IntervieweePost, index) in IntervieweePosts" :key="IntervieweePost.title">
-      <p class="title">{{IntervieweePost.title}}（{{IntervieweePost.content.length}}人）</p>
+    <div :class="{'interview-detail-container': true, 'padder-2': index===IntervieweePosts.length-1}" v-for="(IntervieweePost, index) in IntervieweePosts" :key="index">
+      <p class="title" ><span :class="{ editing: isChecked[index], view: true }" @click="toggleChecked(index, false)">{{ IntervieweePost.title }}</span>
+      <input
+        v-myfoucs="isChecked[index]"
+        :class="{ editing: isChecked[index], input: true }"
+        type="text"
+        ref="titles"
+        v-model="IntervieweePost.title"
+        @blur="toggleChecked(index, true)"
+        @keydown.13="toggleChecked(index, true)"
+        />（{{IntervieweePost.content.length}}人）</p>
       <div class="signed-area">
         <IntervieweeCard v-for="(IntervieweeInfo, index) in IntervieweePost.content"
                :key="IntervieweeInfo.id"
@@ -14,7 +23,7 @@
           编辑通知信息
       </div>
     </div>
-    <div class="banner" v-show="IntervieweePosts.length!=4">
+    <div class="banner" v-show="IntervieweePosts.length!=4" @click="addNewProcess()">
       <img src="../assets/interview/add.png" alt="">
       <p class="blue">新流程</p>
       <p>（剩余{{ 4 - IntervieweePosts.length }}次）</p>
@@ -31,10 +40,20 @@ export default {
   },
   data () {
     return {
-      IntervieweePosts: []
+      IntervieweePosts: [],
+      isChecked: [false, false, false, false]
     }
   },
   computed: {
+  },
+  directives: {
+    myfoucs: {
+      update (el, binding) {
+        if (binding.value) {
+          el.focus()
+        }
+      }
+    }
   },
   methods: {
     async getIntervieweeData () {
@@ -47,15 +66,57 @@ export default {
         return total - (length % total)
       }
       return 0
+    },
+    addNewProcess () {
+      this.IntervieweePosts.push({
+        title: '未命名流程',
+        content: []
+      })
+      this.isChecked[this.IntervieweePosts.length - 1] = true
+      this.$forceUpdate()
+      //
+      this.$nextTick(() => {
+        this.$refs.titles[this.IntervieweePosts.length - 1].select()
+      })
+    },
+    toggleChecked (index, isChanged) {
+      this.isChecked[index] = !this.isChecked[index]
+      // alert('index:' + index + ' ' + this.isChecked[0] + ' ' + this.isChecked[1] + ' ' + this.isChecked[2])
+      this.$forceUpdate()
+      if (isChanged) {
+        this.$nextTick(() => {
+          window.console.log(index + ' ' + this.$refs.titles[index].value)
+        })
+      }
     }
   },
   mounted: function () {
+    window.console.log('ok')
     this.getIntervieweeData()
   }
 }
 </script>
 
 <style lang="scss" scoped>
+.view {
+  display: inline;
+}
+.input {
+  display: none;
+  border: none;
+  width: auto;
+  font-size: 30px;
+  font-family: PingFang SC, sans-serif;
+  font-weight: 500;
+  line-height: 42px;
+  color: #4E94DD
+}
+.editing.input {
+  display: inline;
+}
+.editing.view {
+  display: none;
+}
 .interview-detail-app {
   width: 100%;
   position: relative;
@@ -63,6 +124,7 @@ export default {
   align-items: center;
   justify-content: space-between;
   .banner {
+    cursor: pointer;
     position: absolute;
     right: -12px;
     top: 306px;
