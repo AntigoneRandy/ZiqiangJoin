@@ -1,18 +1,18 @@
 <template>
   <div :class="{'interview-detail-app': true, 'padder' : IntervieweePosts.length!=4}">
     <div :class="{'interview-detail-container': true, 'padder-2': index===IntervieweePosts.length-1}" v-for="(IntervieweePost, index) in IntervieweePosts" :key="index">
-      <p class="title" ><span :class="{ editing: isChecked[index], view: true }" @click="toggleChecked(index, false)">{{ IntervieweePost.title }}</span>
+      <p class="title" ><span :class="{ editing: isChecked[index], view: true }" @click="toggleChecked(index, true, false)">{{ IntervieweePost.title }}</span>
       <input
         v-myfoucs="isChecked[index]"
         :class="{ editing: isChecked[index], input: true }"
         type="text"
         ref="titles"
         v-model="IntervieweePost.title"
-        @blur="toggleChecked(index, true)"
-        @keydown.13="toggleChecked(index, true)"
+        @blur="toggleChecked(index, false, true)"
+        @keydown.13="toggleChecked(index, false, true)"
         />（{{IntervieweePost.content.length}}人）</p>
       <div class="signed-area">
-        <IntervieweeCard v-for="(IntervieweeInfo, index) in IntervieweePost.content"
+        <IntervieweeCard @click.native=showIntervieweeDetail(IntervieweeInfo.id) v-for="(IntervieweeInfo, index) in IntervieweePost.content"
                :key="IntervieweeInfo.id"
                :index="index"
                :info="IntervieweeInfo"/>
@@ -33,6 +33,7 @@
 
 <script>
 import IntervieweeCard from '../components/IntervieweeCard'
+import IntervieweeDetailModal from './IntervieweeDetailModal'
 export default {
   name: 'InterviewDetail',
   components: {
@@ -79,8 +80,8 @@ export default {
         this.$refs.titles[this.IntervieweePosts.length - 1].select()
       })
     },
-    toggleChecked (index, isChanged) {
-      this.isChecked[index] = !this.isChecked[index]
+    toggleChecked (index, value, isChanged) {
+      this.isChecked[index] = value
       // alert('index:' + index + ' ' + this.isChecked[0] + ' ' + this.isChecked[1] + ' ' + this.isChecked[2])
       this.$forceUpdate()
       if (isChanged) {
@@ -88,10 +89,22 @@ export default {
           window.console.log(index + ' ' + this.$refs.titles[index].value)
         })
       }
+    },
+    async showIntervieweeDetail (id) {
+      this.$modal.show(
+        IntervieweeDetailModal,
+        {},
+        {
+          adaptive: true,
+          height: '70%',
+          width: '73%',
+          shiftY: 0.6,
+          styles: 'border-radius: 20px;'
+        }
+      )
     }
   },
   mounted: function () {
-    window.console.log('ok')
     this.getIntervieweeData()
   }
 }

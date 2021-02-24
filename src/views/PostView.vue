@@ -94,10 +94,9 @@ export default {
       this.$router.push({ name: 'postCreate' })
     },
     async showDetail (id) {
-      const res = await require('../../static/tests/postdetail.json')
       this.$modal.show(
         PostDetailModal,
-        { detailInfo: res },
+        {},
         {
           adaptive: true,
           height: '71%',

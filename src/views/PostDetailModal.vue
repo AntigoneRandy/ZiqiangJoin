@@ -61,15 +61,17 @@
 export default {
   name: 'PostDetailModal',
   props: {
-    detailInfo: Object
   },
   methods: {
   },
   data () {
     return {
+      detailInfo: {}
     }
   },
-  mounted: function () {
+  mounted: async function () {
+    const res = await require('../../static/tests/postdetail.json')
+    this.detailInfo = res
   },
   computed: {
     holders () {
