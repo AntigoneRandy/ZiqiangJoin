@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.8/vue.js"></script>
+<style type="text/css"> 
+.test.editing .edit {
+    display: block;
+    width: 150px;
+}
+ 
+.test.editing .view {
+    display: none;
+    width: 150px;
+}
+ 
+.test .edit {
+    display: none;
+}
+</style> 
+</head>
+<body>
+     <div id="test" class="test" :class="{editing: isChecked }" >
+                    <div class="view" @dblclick="toggleChecked()">
+                        <label>{{ inputStr }}</label>
+                    </div>
+                    <input 
+                        v-myfoucs="isChecked" 
+                        class="edit" 
+                        type="text" 
+                        v-model = "inputStr"
+                        @blur="toggleChecked()"
+                        @keyup.13="toggleChecked()"
+                    />
+                </div>
+<script>
+ new Vue({
+	el:"#test",
+	data:{
+        isChecked:false,
+		inputStr:'双击吧，修改吧'
+	},
+	methods:{
+		toggleChecked(){ 
+			this.isChecked= !this.isChecked;
+		}
+	},
+	directives:{
+		// "myfoucs":{
+		// 	update(el, binding){
+		// 		if(binding.value){
+		// 			el.focus();
+		// 		}
+		// 	}
+		// }
+	}
+});
+</script>
+</body>
+</html>

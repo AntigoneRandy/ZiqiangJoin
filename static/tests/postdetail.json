@@ -1,0 +1,45 @@
+{
+    "postName": "自强studio小强车间前端组",
+    "introduction": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur ipsam asperiores culpa ea eveniet obcaecati nulla sit, modi minima maxime eaque, hic adipisci corrupti quae itaque dicta laudantium consequuntur? Fugiat, quas rerum autem expedita harum veniam officia commodi delectus dolores in molestias nemo. Quibusdam quasi veniam earum rerum cupiditate. Hic ex quae repellendus. Optio perferendis accusamus necessitatibus nisi aut. Voluptatibus nobis reiciendis quae beatae dignissimos facere, tempore excepturi libero fuga ut, impedit dolorum laborum ipsam repellendus corrupti asperiores repudiandae reprehenderit nemo sunt culpa aspernatur molestiae animi! Iusto tempora laudantium, cupiditate doloribus placeat dolores beatae repudiandae veritatis tenetur, quae commodi repellat.",
+    "requirements": [
+        {
+            "status": "ok",
+            "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate sapiente reiciendis quidem accusantium commodi doloremque praesentium iure natus enim quae."
+        },
+        {
+            "status": "ok",
+            "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate sapiente reiciendis quidem accusantium commodi doloremque praesentium iure natus enim quae."
+        },
+        {
+            "status": "ok",
+            "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. "
+        },
+        {
+            "status": "wrong",
+            "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit.Quibusdam quasi veniam earum rerum cupiditate. Hic ex quae repellendus. Optio perferendis accusamus necessitatibus nisi aut. Voluptatibus nobis reiciendis quae beatae dignissimos facere, tempore excepturi libero fuga ut, impedit dolorum laborum ipsam repellendus corrupti asperiores repudiandae reprehenderit nemo sunt culpa aspernatur molestiae animi! "
+        }
+    ],
+    "addition": [
+        {
+            "type": "text",
+            "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit.Quibusdam quasi veniam earum rerum cupiditate. Hic ex quae repellendus. Optio perferendis accusamus necessitatibus nisi aut. Voluptatibus nobis reiciendis quae beatae dignissimos facere, tempore excepturi libero fuga ut, impedit dolorum laborum ipsam repellendus corrupti asperiores repudiandae reprehenderit nemo sunt culpa aspernatur molestiae animi!"
+        },
+        {
+            "type": "text",
+            "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit.Quibusdam quasi veniam earum rerum cupiditate. Hic ex quae repellendus. Optio perferendis accusamus necessitatibus nisi aut. Voluptatibus nobis reiciendis quae beatae dignissimos facere, tempore excepturi libero fuga ut, impedit dolorum laborum ipsam repellendus corrupti asperiores repudiandae reprehenderit nemo sunt culpa aspernatur molestiae animi!"
+        },
+        {
+            "type": "text",
+            "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit.Quibusdam quasi veniam earum rerum cupiditate. Hic ex quae repellendus. Optio perferendis accusamus necessitatibus nisi aut. Voluptatibus nobis reiciendis quae beatae dignissimos facere, tempore excepturi libero fuga ut, impedit dolorum laborum ipsam repellendus corrupti asperiores repudiandae reprehenderit nemo sunt culpa aspernatur molestiae animi!"
+        }
+    ],
+    "tags": [
+        "前端",
+        "代码",
+        "大佬",
+        "牛蛙",
+        "lorem"
+    ],
+    "startTime": "2020-09-15",
+    "endTime": "2020-10-01"
+}
