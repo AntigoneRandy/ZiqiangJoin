@@ -1,34 +1,41 @@
 {
     "postName": "自强studio小强车间前端组",
-    "introduction": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur ipsam asperiores culpa ea eveniet obcaecati nulla sit, modi minima maxime eaque, hic adipisci corrupti quae itaque dicta laudantium consequuntur? Fugiat, quas rerum autem expedita harum veniam officia commodi delectus dolores in molestias nemo. Quibusdam quasi veniam earum rerum cupiditate. Hic ex quae repellendus. Optio perferendis accusamus necessitatibus nisi aut. Voluptatibus nobis reiciendis quae beatae dignissimos facere, tempore excepturi libero fuga ut, impedit dolorum laborum ipsam repellendus corrupti asperiores repudiandae reprehenderit nemo sunt culpa aspernatur molestiae animi! Iusto tempora laudantium, cupiditate doloribus placeat dolores beatae repudiandae veritatis tenetur, quae commodi repellat.",
+    "introduction": "小强车间前端组是什么呢？小强车间前端组相信大家都很好奇，那么小强车间前端组究竟是什么呢？小强车间前端组，其实就是写前端代码的了。各位看官可能会有些疑惑，小强车间前端组怎么是写前端代码的呢？但事实就是这样，小编也很震惊。以上就是小编为大家带来的小强车间前端组是什么呢？的回答了，喜欢的话请在评论区留言交流吧！Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur ipsam asperiores culpa ea eveniet obcaecati nulla sit, modi minima maxime eaque, hic adipisci corrupti quae itaque dicta laudantium consequuntur? Fugiat, quas rerum autem expedita harum veniam officia commodi delectus dolores in molestias nemo. Quibusdam quasi veniam earum rerum cupiditate. Hic ex quae repellendus. Optio perferendis accusamus necessitatibus nisi aut. Voluptatibus nobis reiciendis quae beatae dignissimos facere, tempore excepturi libero fuga ut, impedit dolorum laborum ipsam repellendus corrupti asperiores repudiandae reprehenderit nemo sunt culpa aspernatur molestiae animi! Iusto tempora laudantium, cupiditate doloribus placeat dolores beatae repudiandae veritatis tenetur, quae commodi repellat.",
     "requirements": [
         {
+            "uid": "1",
             "status": "ok",
             "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate sapiente reiciendis quidem accusantium commodi doloremque praesentium iure natus enim quae."
         },
         {
+            "uid": "2",
             "status": "ok",
             "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate sapiente reiciendis quidem accusantium commodi doloremque praesentium iure natus enim quae."
         },
         {
+            "uid": "3",
             "status": "ok",
             "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. "
         },
         {
+            "uid": "4",
             "status": "wrong",
             "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit.Quibusdam quasi veniam earum rerum cupiditate. Hic ex quae repellendus. Optio perferendis accusamus necessitatibus nisi aut. Voluptatibus nobis reiciendis quae beatae dignissimos facere, tempore excepturi libero fuga ut, impedit dolorum laborum ipsam repellendus corrupti asperiores repudiandae reprehenderit nemo sunt culpa aspernatur molestiae animi! "
         }
     ],
     "addition": [
         {
+            "uid": "1",
             "type": "text",
             "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit.Quibusdam quasi veniam earum rerum cupiditate. Hic ex quae repellendus. Optio perferendis accusamus necessitatibus nisi aut. Voluptatibus nobis reiciendis quae beatae dignissimos facere, tempore excepturi libero fuga ut, impedit dolorum laborum ipsam repellendus corrupti asperiores repudiandae reprehenderit nemo sunt culpa aspernatur molestiae animi!"
         },
         {
+            "uid": "2",
             "type": "text",
             "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit.Quibusdam quasi veniam earum rerum cupiditate. Hic ex quae repellendus. Optio perferendis accusamus necessitatibus nisi aut. Voluptatibus nobis reiciendis quae beatae dignissimos facere, tempore excepturi libero fuga ut, impedit dolorum laborum ipsam repellendus corrupti asperiores repudiandae reprehenderit nemo sunt culpa aspernatur molestiae animi!"
         },
         {
+            "uid": "3",
             "type": "text",
             "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit.Quibusdam quasi veniam earum rerum cupiditate. Hic ex quae repellendus. Optio perferendis accusamus necessitatibus nisi aut. Voluptatibus nobis reiciendis quae beatae dignissimos facere, tempore excepturi libero fuga ut, impedit dolorum laborum ipsam repellendus corrupti asperiores repudiandae reprehenderit nemo sunt culpa aspernatur molestiae animi!"
         }
